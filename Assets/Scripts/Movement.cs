@@ -39,7 +39,7 @@ public class Movement : MonoBehaviour {
             ParticleSystem temp = Instantiate(explosion, transform.position, Quaternion.identity) as ParticleSystem;
             temp.enableEmission = true;
             temp.Play();
-            Application.LoadLevel(0);
+            Application.LoadLevel(2);
             
 
             //Application.Quit();
