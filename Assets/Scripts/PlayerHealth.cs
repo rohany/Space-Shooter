@@ -11,8 +11,9 @@ public class PlayerHealth : MonoBehaviour {
 	public AudioClip deathClip;
 	public float flashSpeed = 5f;
 	public Color flashColor = new Color(1f,0f,0f,0.1f);
+    public ParticleSystem explosion;
 	AudioSource playerAudio;
-	Movement movement;
+	//Movement movement;
 	bool isDead;
 	bool damaged;
 	// Use this for initialization
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour {
 	{
 
 		//playerAudio = GetComponent <AudioSource>();
+        
 		currentHealth = startingHealth;
 
 	}
@@ -59,15 +61,19 @@ public class PlayerHealth : MonoBehaviour {
 
 
 	}
-
 	public void Death()
 	{
 
 
 		isDead = true;
-		playerAudio.clip = deathClip;
-		playerAudio.Play ();
-		movement.enabled = false;
+		//playerAudio.clip = deathClip;
+		//playerAudio.Play ();
+        ParticleSystem temp = Instantiate(explosion, transform.position, Quaternion.identity) as ParticleSystem;
+        temp.enableEmission = true;
+        temp.Play();
+        Destroy(temp, 3f);
+        Application.LoadLevel(0);
+        //movement.enabled = false;
 
-	}
+    }
 }
