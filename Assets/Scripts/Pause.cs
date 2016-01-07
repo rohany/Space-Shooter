@@ -4,7 +4,7 @@ using System.Collections;
 public class Pause : MonoBehaviour {
 
     // Use this for initialization
-    bool isPaused;
+    public bool isPaused;
     Rect pos;
 	void Start() {
         isPaused = false;
@@ -15,15 +15,7 @@ public class Pause : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isPaused = !isPaused;
-            if (isPaused)
-            {
-                Time.timeScale = 0;
-            }
-            else
-            {
-                Time.timeScale = 1;
-            }
+            isPaused = !isPaused;            
         }
 	}
 

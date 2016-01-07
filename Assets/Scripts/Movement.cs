@@ -13,6 +13,8 @@ public class Movement : MonoBehaviour {
     Vector3 strafe;
     public ParticleSystem explosion;
 	float velocity = 5f;
+    GameObject pauser;
+    bool isPaused;
     //float boost;
 
 	// Use this for initialization
@@ -24,6 +26,9 @@ public class Movement : MonoBehaviour {
         yaw = new Vector3(0, 0, 2);
         pitch = new Vector3(1, 0, 0);
         strafe = new Vector3(0, 1, 0);
+        pauser = GameObject.FindGameObjectWithTag("pauser");
+        isPaused = pauser.GetComponent<Pause>().isPaused;
+        
         //boost = 1f;
 	}
     void OnCollisionEnter(Collision col)
@@ -34,6 +39,7 @@ public class Movement : MonoBehaviour {
             ParticleSystem temp = Instantiate(explosion, transform.position, Quaternion.identity) as ParticleSystem;
             temp.enableEmission = true;
             temp.Play();
+            Application.LoadLevel(0);
             
 
             //Application.Quit();
@@ -41,7 +47,8 @@ public class Movement : MonoBehaviour {
     }
     void checkRotate()
     {
-		if (velocity <= .1f)
+        
+        if (velocity <= .1f)
 			velocity = .1f;
 		if (velocity >= 100f)
 			velocity = 100f;
@@ -84,13 +91,16 @@ public class Movement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        checkRotate();
-		Vector3 targetPos = (velocity * player.transform.forward) + player.transform.position;
-        player.transform.position = Vector3.Lerp(player.transform.position, targetPos, .3f);
-        cam.transform.position = follower.transform.position;
-        Quaternion rotTarget = player.transform.rotation * Quaternion.Euler(rotationOffset);
-        Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, rotTarget, 10f * Time.deltaTime);
+        isPaused = pauser.GetComponent<Pause>().isPaused;
+        if (!isPaused)
+        {
+            checkRotate();
+            Vector3 targetPos = (velocity * player.transform.forward) + player.transform.position;
+            player.transform.position = Vector3.Lerp(player.transform.position, targetPos, .3f);
+            cam.transform.position = follower.transform.position;
+            Quaternion rotTarget = player.transform.rotation * Quaternion.Euler(rotationOffset);
+            Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, rotTarget, 10f * Time.deltaTime);
+        }
 
     }
 }
