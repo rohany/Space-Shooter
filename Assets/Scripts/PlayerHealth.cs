@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour {
 	{
 
 		//playerAudio = GetComponent <AudioSource>();
-        
+
 		currentHealth = startingHealth;
 
 	}
@@ -29,10 +29,12 @@ public class PlayerHealth : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if(Random.Range(1f,10f) < 2f)
+		/*if(Random.Range(1f,10f) < 2f)
 		{
 				TakeDamage(10);
 		}
+		*/
+
 		if(damaged)
 		{
 			damageImage.color = flashColor;

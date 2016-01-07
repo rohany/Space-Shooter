@@ -15,7 +15,7 @@ public class Shoot : MonoBehaviour {
         //speed = 20f;
 
 	}
-	
+
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space))
         {
