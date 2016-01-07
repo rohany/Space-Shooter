@@ -34,8 +34,8 @@ public class Movement : MonoBehaviour {
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "asteroid")
-        {
-            Destroy(gameObject);
+        {            
+            Destroy(gameObject);            
             ParticleSystem temp = Instantiate(explosion, transform.position, Quaternion.identity) as ParticleSystem;
             temp.enableEmission = true;
             temp.Play();
