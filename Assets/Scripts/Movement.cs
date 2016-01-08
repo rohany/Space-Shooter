@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour {
     Vector3 targetPos;
     Vector3 strafe;
     public ParticleSystem explosion;
-	float velocity = 5f;
+	  public float velocity = 5f;
     GameObject pauser;
     bool isPaused;
     //float boost;
@@ -28,26 +28,26 @@ public class Movement : MonoBehaviour {
         strafe = new Vector3(0, 1, 0);
         pauser = GameObject.FindGameObjectWithTag("pauser");
         isPaused = pauser.GetComponent<Pause>().isPaused;
-        
+
         //boost = 1f;
 	}
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "asteroid")
-        {            
-            Destroy(gameObject);            
+        {
+            Destroy(gameObject);
             ParticleSystem temp = Instantiate(explosion, transform.position, Quaternion.identity) as ParticleSystem;
             temp.enableEmission = true;
             temp.Play();
             Application.LoadLevel(2);
-            
+
 
             //Application.Quit();
         }
     }
     void checkRotate()
     {
-        
+
         if (velocity <= .1f)
 			velocity = .1f;
 		if (velocity >= 100f)
@@ -87,8 +87,8 @@ public class Movement : MonoBehaviour {
 			velocity -= 5f;
 		}
     }
-    
-	
+
+
 	// Update is called once per frame
 	void Update () {
         isPaused = pauser.GetComponent<Pause>().isPaused;

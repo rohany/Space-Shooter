@@ -24,7 +24,14 @@ public class CollisionLasers : MonoBehaviour {
             Destroy(gameObject);
         }
         if(col.gameObject.tag == "Player"){
-            player.GetComponent<PlayerHealth>().currentHealth -= 20;
+            player.GetComponent<PlayerHealth>().TakeDamage(20);
+            ParticleSystem tempExplosion = Instantiate(explosion, gameObject.transform.position, Quaternion.identity) as ParticleSystem;
+            tempExplosion.enableEmission = true;
+            tempExplosion.Play();
+            Destroy(gameObject);
+        }
+        if(col.gameObject.tag == "enemy"){
+            col.gameObject.GetComponent<EnemyBase>().health -= 20;
             ParticleSystem tempExplosion = Instantiate(explosion, gameObject.transform.position, Quaternion.identity) as ParticleSystem;
             tempExplosion.enableEmission = true;
             tempExplosion.Play();
