@@ -20,6 +20,7 @@ public class Shoot : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject bolt = Instantiate(bullet, spawn.transform.position, spawn.transform.rotation) as GameObject;
+            
         }
 	}
 }

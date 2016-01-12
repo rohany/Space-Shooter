@@ -9,7 +9,7 @@ public class AsteroidRemoval : MonoBehaviour {
 	void Start () {
         health = 100;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if (health <= 0)

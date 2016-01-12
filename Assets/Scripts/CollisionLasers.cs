@@ -13,7 +13,7 @@ public class CollisionLasers : MonoBehaviour {
         asteroids = GameObject.FindGameObjectsWithTag("asteroid");
         player = GameObject.FindGameObjectWithTag("Player");
 	}
-    void OnCollisionEnter(Collision col)
+    /*void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.tag == "asteroid")
         {
@@ -38,6 +38,7 @@ public class CollisionLasers : MonoBehaviour {
             Destroy(gameObject);
         }
     }
+    */
 	// Update is called once per frame
 	void Update () {
 
