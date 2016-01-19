@@ -9,8 +9,6 @@ TagManager:
   - Spawn
   - asteroid
   - pauser
-  - enemy
-  - enemySpawn
   layers:
   - Default
   - TransparentFX

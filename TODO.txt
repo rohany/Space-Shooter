@@ -1,2 +1,0 @@
-- Implement Ray Casting for the laser collision detection
-- Improve the AI
