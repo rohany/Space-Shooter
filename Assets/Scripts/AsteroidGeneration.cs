@@ -24,7 +24,7 @@ public class AsteroidGeneration : MonoBehaviour {
             float z = Random.Range(-maxRange, maxRange);
             Vector3 pos = new Vector3(x, y, z);
             GameObject asteroid = Instantiate(asteroidA, pos, Random.rotation) as GameObject;
-            
+
         }
         for (int i = 0; i < 20; i++)
         {
@@ -33,7 +33,7 @@ public class AsteroidGeneration : MonoBehaviour {
             float z = Random.Range(-maxRange, maxRange);
             Vector3 pos = new Vector3(x, y, z);
             GameObject asteroid = Instantiate(asteroidB, pos, Random.rotation) as GameObject;
-            
+
         }
         for (int i = 0; i < 20; i++)
         {
@@ -42,7 +42,7 @@ public class AsteroidGeneration : MonoBehaviour {
             float z = Random.Range(-maxRange, maxRange);
             Vector3 pos = new Vector3(x, y, z);
             GameObject asteroid = Instantiate(asteroidC, pos, Random.rotation) as GameObject;
-            
+
         }
         for (int i = 0; i < 20; i++)
         {
@@ -51,7 +51,7 @@ public class AsteroidGeneration : MonoBehaviour {
             float z = Random.Range(-maxRange, maxRange);
             Vector3 pos = new Vector3(x, y, z);
             GameObject asteroid = Instantiate(asteroidD, pos, Random.rotation) as GameObject;
-            
+
         }
         for (int i = 0; i < 20; i++)
         {
@@ -60,7 +60,7 @@ public class AsteroidGeneration : MonoBehaviour {
             float z = Random.Range(-maxRange, maxRange);
             Vector3 pos = new Vector3(x, y, z);
             GameObject asteroid = Instantiate(asteroidE, pos, Random.rotation) as GameObject;
-            
+
         }
         for (int i = 0; i < 20; i++)
         {
@@ -69,7 +69,7 @@ public class AsteroidGeneration : MonoBehaviour {
             float z = Random.Range(-maxRange, maxRange);
             Vector3 pos = new Vector3(x, y, z);
             GameObject asteroid = Instantiate(asteroidF, pos, Random.rotation) as GameObject;
-            
+
         }
         for (int i = 0; i < 20; i++)
         {
@@ -78,7 +78,7 @@ public class AsteroidGeneration : MonoBehaviour {
             float z = Random.Range(-maxRange, maxRange);
             Vector3 pos = new Vector3(x, y, z);
             GameObject asteroid = Instantiate(asteroidG, pos, Random.rotation) as GameObject;
-            
+
         }
         for (int i = 0; i < 20; i++)
         {
@@ -87,12 +87,12 @@ public class AsteroidGeneration : MonoBehaviour {
             float z = Random.Range(-maxRange, maxRange);
             Vector3 pos = new Vector3(x, y, z);
             GameObject asteroid = Instantiate(asteroidH, pos, Random.rotation) as GameObject;
-            
+
         }
     }
-	
+
 	// Update is called once per frame
 	void Update () {
-	    
+
 	}
 }

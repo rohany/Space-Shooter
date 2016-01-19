@@ -18,6 +18,7 @@ public class ShotBehavior : MonoBehaviour {
         isPaused = pauser.GetComponent<Pause>().isPaused;
         if (!isPaused)
         {
+            targetPos = transform.position + transform.forward * 100f;
             transform.position = Vector3.Lerp(transform.position, targetPos, 1000f);
         }
     }

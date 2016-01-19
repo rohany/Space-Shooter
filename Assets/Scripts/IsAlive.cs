@@ -7,9 +7,9 @@ public class IsAlive : MonoBehaviour {
 	void Start () {
         Destroy(gameObject, 3f);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-      
+
 	}
 }
